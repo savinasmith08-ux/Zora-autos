@@ -8,6 +8,7 @@ import { PageTransition } from "@/components/PageTransition";
 import { Layout } from "@/components/layout";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { AdminRoute } from "@/components/AdminRoute";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 
 // Lazy load route components for code splitting
@@ -33,24 +34,26 @@ const App = () => (
       <Sonner />
       <HashRouter>
         <Layout>
-          <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
-            <PageTransition>
-              <Routes>
-                <Route path="/auth" element={<Auth />} />
-                <Route path="/reset-password" element={<ResetPassword />} />
-                <Route path="/" element={<Home />} />
-                <Route path="/cars" element={<CarListings />} />
-                <Route path="/cars/:id" element={<CarDetails />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/contact/success" element={<ContactSuccess />} />
-                <Route path="/sell" element={<SellYourCar />} />
-                <Route path="/my-submissions" element={<ProtectedRoute><MySubmissions /></ProtectedRoute>} />
-                <Route path="/inquiries" element={<ProtectedRoute><Inquiries /></ProtectedRoute>} />
-                <Route path="/admin" element={<ProtectedRoute><AdminRoute><AdminDashboard /></AdminRoute></ProtectedRoute>} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </PageTransition>
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+              <PageTransition>
+                <Routes>
+                  <Route path="/auth" element={<Auth />} />
+                  <Route path="/reset-password" element={<ResetPassword />} />
+                  <Route path="/" element={<Home />} />
+                  <Route path="/cars" element={<CarListings />} />
+                  <Route path="/cars/:id" element={<CarDetails />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/contact/success" element={<ContactSuccess />} />
+                  <Route path="/sell" element={<SellYourCar />} />
+                  <Route path="/my-submissions" element={<ProtectedRoute><MySubmissions /></ProtectedRoute>} />
+                  <Route path="/inquiries" element={<ProtectedRoute><Inquiries /></ProtectedRoute>} />
+                  <Route path="/admin" element={<ProtectedRoute><AdminRoute><AdminDashboard /></AdminRoute></ProtectedRoute>} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </PageTransition>
+            </Suspense>
+          </ErrorBoundary>
         </Layout>
 
       </HashRouter>
