@@ -73,7 +73,7 @@ export function CarListings() {
     });
 
     return filtered;
-  }, [searchTerm, selectedFuelTypes, selectedConditions, priceRange, mileageRange, sortBy]);
+  }, [cars, searchTerm, selectedFuelTypes, selectedConditions, priceRange, mileageRange, sortBy]);
 
   const handleFuelTypeChange = (fuelType: FuelType, checked: boolean) => {
     if (checked) setSelectedFuelTypes([...selectedFuelTypes, fuelType]);
