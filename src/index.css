@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ZORA AUTOS Design System - Professional Automotive Theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - Clean whites and professional grays */
+    --background: 0 0% 98%;
+    --foreground: 215 25% 15%;
+
+    /* Card system - Elevated surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    /* Popover system */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary - Professional automotive blue */
+    --primary: 210 88% 28%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 88% 45%;
+
+    /* Secondary - Subtle gray tones */
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 215 25% 25%;
+
+    /* Muted - Background elements */
+    --muted: 210 17% 96%;
+    --muted-foreground: 215 15% 42%;
+
+    /* Accent - Vibrant highlight color */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Interactive elements */
+    --border: 210 17% 90%;
+    --input: 210 17% 92%;
+    --ring: 210 88% 28%;
+
+    /* Automotive-specific colors */
+    --electric: 142 71% 45%;
+    --electric-foreground: 0 0% 100%;
+    --petrol: 210 88% 28%;
+    --petrol-foreground: 0 0% 100%;
+    --diesel: 25 75% 35%;
+    --diesel-foreground: 0 0% 100%;
+
+    /* Condition badges */
+    --new-car: 142 71% 45%;
+    --new-car-foreground: 0 0% 100%;
+    --used-car: 38 92% 50%;
+    --used-car-foreground: 0 0% 100%;
+
+    /* Layout */
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(210 88% 28%), hsl(210 88% 45%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 17% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 63%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 12px hsl(210 25% 15% / 0.08);
+    --shadow-card-hover: 0 8px 24px hsl(210 25% 15% / 0.12);
+    --shadow-hero: 0 20px 40px hsl(210 88% 28% / 0.15);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Sidebar system */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Base colors - Dark automotive theme */
+    --background: 215 25% 8%;
+    --foreground: 210 40% 98%;
+
+    /* Card system */
+    --card: 215 25% 10%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover system */
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Bright automotive blue for dark mode */
+    --primary: 210 88% 55%;
+    --primary-foreground: 215 25% 8%;
+    --primary-glow: 210 88% 65%;
+
+    /* Secondary - Dark surfaces */
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted - Background elements */
+    --muted: 215 25% 12%;
+    --muted-foreground: 215 15% 70%;
+
+    /* Accent - Bright highlight for dark mode */
+    --accent: 25 95% 58%;
+    --accent-foreground: 215 25% 8%;
+
+    /* Status colors - Adjusted for dark mode */
+    --success: 142 71% 50%;
+    --success-foreground: 215 25% 8%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 215 25% 8%;
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Interactive elements */
+    --border: 215 25% 20%;
+    --input: 215 25% 18%;
+    --ring: 210 88% 55%;
+
+    /* Automotive-specific colors - Dark mode variants */
+    --electric: 142 71% 50%;
+    --electric-foreground: 215 25% 8%;
+    --petrol: 210 88% 55%;
+    --petrol-foreground: 215 25% 8%;
+    --diesel: 25 75% 45%;
+    --diesel-foreground: 215 25% 8%;
+
+    /* Condition badges - Dark mode */
+    --new-car: 142 71% 50%;
+    --new-car-foreground: 215 25% 8%;
+    --used-car: 38 92% 55%;
+    --used-car-foreground: 215 25% 8%;
+
+    /* Sidebar - dark mode */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
